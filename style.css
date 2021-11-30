@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   line-height: 1.3;
@@ -26,14 +30,19 @@ p {
 }
 
 h3 {
-  margin: 10px 0;
+  margin-bottom: 10px;
   font-size: 1.5em;
 }
 
-ul, li {
+ul, li, a {
+  text-decoration: none;
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+li {
+  cursor: pointer;
 }
 
 img {
@@ -48,6 +57,11 @@ img {
   padding: 10px 15px;
   margin: 10px 0;
   font-size: 1.3em;
+  cursor: pointer;
+}
+
+.btn button:hover {
+  opacity: 0.9;
 }
 
 header {
@@ -118,19 +132,24 @@ header nav .nav-div .list {
   transition: 0.4s;
 }
 
-header nav .nav-div .list li {
+header nav .nav-div .list li a {
+  color: white;
   font-size: 1em;
   text-align: center;
   display: block;
   padding: 2px 10px;
 }
 
-header nav .nav-div .list .active {
+header nav .nav-div .list li a:hover {
+  color: #AFE28B;
+}
+
+header nav .nav-div .list .active a {
+  text-decoration: underline;
   width: 100%;
   margin: auto;
   color: #AFE28B;
   padding: 0 10px;
-  border-bottom: 1px solid #AFE28B;
 }
 
 header nav .nav-div .list-item {
@@ -177,7 +196,6 @@ header .welcome .welcome-text p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 80%;
   margin: 20px auto;
 }
 
@@ -226,41 +244,45 @@ header .welcome .welcome-text p {
   color: black;
 }
 
-.thumnail-left {
+.thumnail-right, .thumnail-left, .thumnail-3 {
   z-index: -1;
   position: absolute;
-  top: 0;
-  left: -100%;
+  z-index: -1;
+  position: absolute;
+  z-index: -1;
+  position: absolute;
   height: 200px;
   width: 100%;
   background-image: url("./asset/background sec.png");
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
 .thumnail-right {
-  z-index: -1;
-  position: absolute;
   top: 0;
-  left: 30%;
-  height: 200px;
-  width: 100%;
-  background-image: url("./asset/background sec.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+  left: 20%;
 }
 
-#scroll {
+.thumnail-left {
+  top: 0;
+  left: -50%;
+}
+
+.thumnail-3 {
+  top: 70%;
+  left: 50%;
+}
+
+#service {
   overflow: hidden;
 }
 
-#scroll .sec1 {
+#service .sec1 {
   position: relative;
 }
 
-#scroll .sec1 .scroll {
+#service .sec1 .scroll {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -270,7 +292,7 @@ header .welcome .welcome-text p {
           flex-direction: column;
 }
 
-#scroll .sec1 .scroll .box {
+#service .sec1 .scroll .box {
   text-align: center;
   border: 1px solid black;
   padding: 20px;
@@ -279,13 +301,16 @@ header .welcome .welcome-text p {
   font-size: 0.9em;
 }
 
+.prefooter-property, .prefooter-text, .property-item {
+  width: 80%;
+}
+
 #about {
   overflow: hidden;
   position: relative;
 }
 
 #about .prefooter .prefooter-text {
-  width: 80%;
   margin: auto;
 }
 
@@ -304,7 +329,6 @@ header .welcome .welcome-text p {
 }
 
 #about .prefooter .prefooter-property {
-  width: 80%;
   margin: 40px auto;
 }
 
@@ -423,7 +447,7 @@ footer .copyright p {
     padding: 10px 30px;
   }
   header nav .nav-div .left-nav img {
-    width: 150px;
+    width: 120px;
   }
   header nav .nav-div .left-nav .menu {
     display: none;
@@ -459,19 +483,32 @@ footer .copyright p {
     padding: 10px 20px;
     margin: 10px 0;
   }
+  .thumnail-right {
+    top: 20%;
+    left: 20%;
+  }
+  .thumnail-left {
+    top: 10%;
+    left: -50%;
+  }
+  .thumnail-3 {
+    top: 70%;
+    left: 50%;
+  }
   .sec-head {
     text-align: center;
-    width: 70%;
     margin: 50px auto;
   }
   .sec-head h3 {
     margin: 20px 0;
   }
   .about {
-    width: 90%;
-    margin: 50px auto;
+    margin: 0 auto;
   }
-  #scroll .sec1 .scroll {
+  .prefooter-property, .prefooter-text, .property-item, .sec-head {
+    width: 80%;
+  }
+  #service .sec1 .scroll {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -484,7 +521,7 @@ footer .copyright p {
             flex-direction: row;
     margin: 50px 0;
   }
-  #scroll .sec1 .scroll .box {
+  #service .sec1 .scroll .box {
     text-align: center;
     border: 1px solid black;
     padding: 20px;
@@ -510,11 +547,10 @@ footer .copyright p {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    width: 90%;
     margin: 40px auto;
   }
   .property .property-item .img {
-    width: 40%;
+    width: 45%;
   }
   .property .property-item .property-text {
     width: 50%;
@@ -532,7 +568,6 @@ footer .copyright p {
     margin: 30px 0;
   }
   #about .prefooter .prefooter-text {
-    width: 90%;
     margin: auto;
     padding: 30px 0;
   }
@@ -548,7 +583,6 @@ footer .copyright p {
     font-size: 0.8em;
   }
   #about .prefooter .prefooter-property {
-    width: 90%;
     margin: 30px auto;
     padding: 30px 0;
     display: -webkit-box;
@@ -658,10 +692,13 @@ footer .copyright p {
     padding: 15px 40px;
     margin: 10px 0;
   }
+  .prefooter-property, .prefooter-text, .property-item, .sec-head {
+    width: 70%;
+  }
   .sec-head {
     text-align: center;
     width: 70%;
-    margin: 70px auto;
+    margin: 30px auto;
   }
   .sec-head h3 {
     margin: 20px 0;
@@ -684,14 +721,10 @@ footer .copyright p {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    width: 90%;
     margin: 40px auto;
   }
   .property .property-item .img {
     width: 45%;
-  }
-  .property .property-item .property-text {
-    width: 50%;
   }
   .property .property-item .property-text p {
     margin: 30px 0;

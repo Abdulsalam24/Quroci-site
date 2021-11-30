@@ -52,7 +52,10 @@ header {
 }
 
 header nav {
-  padding: 5px 15px;
+  position: fixed;
+  background-color: #020250;
+  width: 100%;
+  padding: 10px 0;
 }
 
 header nav .nav-div {
@@ -69,39 +72,67 @@ header nav .nav-div {
           justify-content: space-between;
 }
 
-header nav .nav-div img {
-  width: 30%;
-}
-
-header nav .nav-div ul {
-  color: white;
+header nav .nav-div .left-nav {
+  -webkit-transition: 0.5;
+  transition: 0.5;
+  padding: 10px 30px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  display: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-header nav .nav-div ul .active {
-  color: #AFE28B;
-  border-bottom: 1px solid #AFE28B;
+header nav .nav-div .left-nav img {
+  width: 100px;
 }
 
-header nav .nav-div .menu .dash {
+header nav .nav-div .left-nav .menu .dash {
   background-color: white;
   margin-bottom: 4px;
   height: 3px;
   width: 20px;
 }
 
+header nav .nav-div .list {
+  height: calc(100% - 50px);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 100%;
+  background-color: black;
+  color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+header nav .nav-div .list li {
+  font-size: 1em;
+  text-align: center;
+  display: block;
+  padding: 2px 10px;
+}
+
+header nav .nav-div .list .active {
+  width: 100%;
+  margin: auto;
+  color: #AFE28B;
+  padding: 0 10px;
+  border-bottom: 1px solid #AFE28B;
+}
+
+header nav .nav-div .list-item {
+  left: 0%;
+}
+
 header .welcome .welcome-text {
   width: 70%;
-  padding: 20px 20px 40px;
+  padding: 90px 20px 40px;
   font-size: 0.6em;
   color: white;
 }
@@ -258,7 +289,7 @@ footer {
 }
 
 footer .footer img {
-  width: 40%;
+  width: 100px;
 }
 
 footer .footer .flex {
@@ -280,7 +311,7 @@ footer .footer .flex .social {
 }
 
 footer .footer .flex .social img {
-  width: 10%;
+  width: 30px;
   height: 20%;
   background-color: #0C1505;
   margin: 20px 3px;
@@ -310,11 +341,317 @@ footer .copyright {
 }
 
 footer .copyright img {
-  width: 5%;
+  width: 25px;
 }
 
 footer .copyright p {
   margin: 0 10px;
   color: white;
+}
+
+@media screen and (min-width: 670px) {
+  body {
+    font-size: 22px;
+  }
+  header nav {
+    padding: 20px 0;
+  }
+  header nav .nav-div {
+    padding: 20px 0;
+    height: 30px;
+    line-height: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  header nav .nav-div .left-nav {
+    padding: 10px 30px;
+  }
+  header nav .nav-div .left-nav img {
+    width: 150px;
+  }
+  header nav .nav-div .left-nav .menu {
+    display: none;
+  }
+  header nav .nav-div .list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 50px;
+    line-height: 50px;
+    position: unset;
+    background-color: inherit;
+  }
+  header nav .nav-div .list li, header nav .nav-div .list .active {
+    text-align: center;
+    padding: 0;
+    margin: 0 30px;
+  }
+  header .welcome .welcome-text {
+    width: 50%;
+    padding: 130px 40px 80px;
+    font-size: 0.8em;
+    color: white;
+  }
+  header .welcome .welcome-text h1 {
+    line-height: 1.6;
+  }
+  header .welcome .welcome-text p {
+    font-size: 1em;
+    margin: 20px 0;
+  }
+  header .btn button {
+    padding: 10px 20px;
+    margin: 10px 0;
+  }
+  .sec-head {
+    text-align: center;
+    width: 70%;
+    margin: 50px auto;
+  }
+  .sec-head h3 {
+    margin: 20px 0;
+  }
+  .about {
+    width: 90%;
+    margin: 50px auto;
+  }
+  #scroll .sec1 .scroll {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 50px 0;
+  }
+  #scroll .sec1 .scroll .box {
+    text-align: center;
+    border: 1px solid black;
+    padding: 20px;
+    width: 50%;
+    margin: 10px auto;
+    font-size: 0.9em;
+  }
+  .property {
+    padding: 20px 0;
+  }
+  .property .property-item {
+    padding: 20px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 90%;
+    margin: 40px auto;
+  }
+  .property .property-item .img {
+    width: 40%;
+  }
+  .property .property-item .property-text {
+    width: 50%;
+  }
+  .property .property-item .property-text p {
+    margin: 10px 0;
+  }
+  .property .property-item .property-text blockquote p {
+    margin: 30px 0;
+  }
+  .property .property-item .property-text blockquote p:after {
+    right: 30px;
+  }
+  #about .prefooter {
+    margin: 30px 0;
+  }
+  #about .prefooter .prefooter-text {
+    width: 90%;
+    margin: auto;
+    padding: 30px 0;
+  }
+  #about .prefooter .prefooter-text p {
+    margin: 10px 0;
+  }
+  #about .prefooter .prefooter-text ul {
+    width: 90%;
+    margin: 10px auto;
+  }
+  #about .prefooter .prefooter-text ul li {
+    list-style-type: circle;
+    font-size: 0.8em;
+  }
+  #about .prefooter .prefooter-property {
+    width: 90%;
+    margin: 30px auto;
+    padding: 30px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #about .prefooter .prefooter-property .text {
+    width: 45%;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  #about .prefooter .prefooter-property .img {
+    width: 50%;
+  }
+  #about .prefooter .prefooter-property p {
+    margin: 20px 0;
+  }
+  #about .prefooter .prefooter-property form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 20px 0;
+  }
+  #about .prefooter .prefooter-property form input {
+    padding: 10px;
+    margin: 40px 0;
+  }
+  #about .prefooter .prefooter-property form button {
+    padding: 10px 30px;
+    font-size: 0.8em;
+  }
+  footer .footer .logo {
+    width: 95%;
+    margin: auto;
+  }
+  footer .footer .logo img {
+    width: 170px;
+  }
+  footer .footer .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 90%;
+    margin: 0 auto 30px;
+  }
+  footer .footer .flex .social img {
+    margin: 20px 10px;
+  }
+  footer .footer .flex ul li {
+    margin: 15px;
+  }
+  footer .copyright {
+    width: 90%;
+    margin: auto;
+    padding: 30px;
+  }
+  footer .copyright img {
+    width: 25px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    font-size: 28px;
+  }
+  header nav {
+    padding: 30px 0;
+  }
+  header nav .nav-div {
+    padding: 30px 0;
+  }
+  header nav .nav-div .left-nav img {
+    width: 200px;
+  }
+  header nav .nav-div .list {
+    width: 60%;
+  }
+  header nav .nav-div .list li, header nav .nav-div .list .active {
+    margin-right: 40px;
+  }
+  header .welcome .welcome-text {
+    width: 50%;
+    padding: 200px 40px 100px 70px;
+    font-size: 0.8em;
+    color: white;
+  }
+  header .welcome .welcome-text p {
+    margin: 30px 0;
+  }
+  .btn button {
+    padding: 20px 40px;
+    margin: 10px 0;
+  }
+  .sec-head {
+    text-align: center;
+    width: 70%;
+    margin: 70px auto;
+  }
+  .sec-head h3 {
+    margin: 20px 0;
+  }
+  .property {
+    padding: 20px 0;
+  }
+  .property .property-item {
+    padding: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 90%;
+    margin: 40px auto;
+  }
+  .property .property-item .img {
+    width: 50%;
+  }
+  .property .property-item .property-text {
+    width: 50%;
+  }
+  .property .property-item .property-text p {
+    margin: 10px 0;
+  }
+  .property .property-item .property-text blockquote p {
+    margin: 30px 0;
+  }
+  .property .property-item .property-text blockquote p:after {
+    right: 30px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

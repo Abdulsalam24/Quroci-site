@@ -52,41 +52,69 @@ header{
     background-size: cover;
     background-position: center;
     nav{
-        padding: 5px 15px;
+        position: fixed;
+        background-color: rgb(2, 2, 80);
+        width: 100%;
+        padding: 10px 0;
         .nav-div{
             height: 50px;
             line-height: 50px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            img{
-                width: 30%;
-            }
-            ul{
-                color: white;
+            .left-nav{
+                transition: 0.5;
+                padding: 10px 30px;
+                width: 100%;
                 display: flex;
-                justify-content: space-between;
                 align-items: center;
-                display: none;
+                justify-content: space-between;
+                img{
+                    width: 100px;
+                }
+                .menu{
+                    .dash{
+                        background-color: white;
+                        margin-bottom: 4px ;
+                        height: 3px;
+                        width: 20px;
+                    }
+                }
+            }
+
+            .list{ 
+                height: calc(100% - 50px);
+                width: 100%;
+                position: fixed;
+                bottom: 0;
+                left: 100%;
+                background-color: black;
+                color: white;
+                transition: 0.4s;
+                li{
+                    font-size: 1em;
+                    text-align: center;
+                    display: block;
+                    padding: 2px 10px;
+                }
+                // display: none;
                 .active{
+                    width: 100%;
+                    margin: auto;
                     color: $light-green;
+                    padding: 0 10px ;
                     border-bottom: 1px solid $light-green;
                 }
             }
-            .menu{
-                .dash{
-                    background-color: white;
-                    margin-bottom: 4px ;
-                    height: 3px;
-                    width: 20px;
-                }
+            .list-item{
+                left: 0%;
             }
         }
     }
     .welcome{
         .welcome-text{
             width: 70%;
-            padding: 20px 20px 40px;
+            padding: 90px 20px 40px;
             font-size: 0.6em;
             color: white;
             h1{
@@ -221,7 +249,7 @@ footer{
     background-color: #0C1505;
     .footer{
         img{
-            width: 40%;
+            width: 100px;
         }
         .flex{
             display: flex;
@@ -231,7 +259,7 @@ footer{
             .social{
                 display: flex;
                 img{
-                    width: 10%;
+                    width: 30px;
                     height: 20%;
                     background-color:#0C1505;
                     margin: 20px 3px;
@@ -253,7 +281,7 @@ footer{
         width: 80%;
         margin: auto;
         img{
-            width: 5%;
+            width: 25px;
         }
         p{
             margin: 0 10px;
@@ -262,5 +290,309 @@ footer{
     }
 }
 @media screen and (min-width:670px){
-    
+    body{
+        font-size: 22px;
+    }
+        
+    header{
+        nav{
+            padding: 20px 0;
+            .nav-div{
+                padding: 20px 0;
+                height: 30px;
+                line-height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .left-nav{
+                    padding: 10px 30px;
+                    img{
+                        width: 150px;
+                    }
+                    .menu{
+                        display: none;
+                    }
+                }
+
+                .list{ 
+                    display: flex;
+                    height: 50px;
+                    line-height: 50px;
+                    position: unset;
+                    background-color: inherit;
+                    li,.active{
+                        text-align: center;
+                        padding: 0;
+                        margin: 0 30px;
+                    }
+                }
+            }
+        }
+        .welcome{
+            .welcome-text{
+                width: 50%;
+                padding: 130px 40px 80px;
+                font-size: 0.8em;
+                color: white;
+                h1{
+                    line-height: 1.6;
+                }
+                p{
+                    font-size: 1em;
+                    margin: 20px 0;
+                }
+            }
+        }
+        .btn{
+            button{
+                padding: 10px 20px;
+                margin: 10px 0;
+            }
+        }
+        
+
+    }
+                
+    .sec-head{
+        text-align: center;
+        width: 70%;
+        margin:50px auto;
+        h3{
+            margin: 20px 0;
+        }
+    }
+
+    .about{
+        width: 90%;
+        margin:50px auto;
+    }
+            
+            
+    #scroll{
+        .sec1{
+            .scroll{
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+                margin: 50px 0;
+                .box{
+                    text-align: center;
+                    border: 1px solid black;
+                    padding: 20px;
+                    width: 50%;
+                    margin:10px auto;
+                    font-size: 0.9em;
+                }
+            }
+        }
+    }
+
+    .property{
+        padding: 20px 0;
+        .property-item{
+            padding: 20px 0;
+            display: flex;
+            flex-direction: row;
+            align-items: unset;
+            justify-content: space-between;
+            width: 90%;
+            margin:40px auto;
+            .img{
+                width: 40%;
+            }
+            .property-text{
+                width: 50%;
+                p{
+                    margin: 10px 0;
+                }
+                blockquote {
+                    p{
+                        margin: 30px 0;
+                    }
+                }
+                blockquote p:after { 
+                    right: 30px;
+                }
+            }
+        }
+    }
+                  
+    #about{
+        .prefooter{
+            margin: 30px 0;
+            .prefooter-text{
+                width: 90%;
+                margin:auto;
+                padding: 30px 0;
+                p{
+                    margin: 10px 0;
+                }
+                ul{
+                    width:90%;
+                    margin:10px auto;
+                    li{
+                        list-style-type: circle;
+                        font-size: 0.8em;
+                    }
+                }
+            }
+            .prefooter-property{
+                width: 90%;
+                margin:30px auto;
+                padding: 30px 0;
+                display: flex;
+                justify-content: space-between;
+                .text{
+                    width: 45%;
+                    align-self: flex-end;
+                }
+                .img{
+                    width: 50%;
+                }
+                p{
+                    margin: 20px 0;
+                }
+                form{
+                    display: flex;
+                    align-items: center;
+                    margin: 20px 0;
+                    input{
+                        padding: 10px;
+                        margin: 40px 0;
+                    }
+                    button{
+                        padding: 10px 30px;
+                        font-size: 0.8em;
+                    }
+                }
+            }
+        }
+    }
+        
+    footer{
+        .footer{
+            .logo{
+                width: 95%;
+                margin: auto;
+                img{
+                    width: 170px;
+                }
+            }
+            .flex{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: row;
+                width: 90%;
+                margin:0 auto 30px;
+                .social{
+                    img{
+                        margin: 20px 10px;
+                    }
+                }
+                ul{
+                    li{
+                        margin: 15px;
+                    }
+                }
+            }
+        }
+        .copyright{
+            width: 90%;
+            margin: auto;
+            padding: 30px;
+            img{
+                width: 25px;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 1000px) {
+    body{
+        font-size: 28px;
+    }
+    header{
+        nav{
+            padding: 30px 0;
+            .nav-div{
+                padding: 30px 0;
+                .left-nav{
+                    img{
+                        width: 200px;
+                    }
+                }
+
+                .list{ 
+                    width: 60%;
+                    li,.active{
+                        margin-right: 40px;
+                    }
+                }
+            }
+        }
+        .welcome{
+            .welcome-text{
+                width: 50%;
+                padding: 200px 40px 100px 70px;
+                font-size: 0.8em;
+                color: white;
+                p{
+                    margin: 30px 0;
+                }
+            }
+        }
+    }
+
+    .btn{
+        button{
+            padding: 20px 40px;
+            margin: 10px 0;
+        }
+    }
+
+    .sec-head{
+        text-align: center;
+        width: 70%;
+        margin:70px auto;
+        h3{
+            margin: 20px 0;
+        }
+    }
+
+
+    .property{
+        padding: 20px 0;
+        .property-item{
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: unset;
+            justify-content: space-between;
+            width: 90%;
+            margin:40px auto;
+            .img{
+                width: 50%;
+            }
+            .property-text{
+                width: 50%;
+                p{
+                    margin: 10px 0;
+                }
+                blockquote {
+                    p{
+                        margin: 30px 0;
+                    }
+                }
+                blockquote p:after { 
+                    right: 30px;
+                }
+            }
+        }
+    }
+
+
+
+
 }

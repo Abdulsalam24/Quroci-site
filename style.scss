@@ -680,6 +680,25 @@ footer{
     }
 
 
+     
+    footer{
+        .footer{
+            .flex{
+                width: 70%;
+                margin:0 40px;
+            }
+        }
+        .copyright{
+            width: 95%;
+            margin: auto;
+            padding: 15px;
+            img{
+                width: 25px;
+            }
+        }
+    }
+
+
 
 
 }
